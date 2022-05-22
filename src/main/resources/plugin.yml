@@ -1,0 +1,13 @@
+name: Bingo
+main: de.petropia.nbsDemo.NbsDemo
+author: Professor_Sam
+version: ${project.version}
+api-version: 1.18
+commands:
+   Songs:
+      description: Manage songs
+      permission: nbsdemo.songs
+permissions:
+   nbsdemo.songs: 
+      default: false
+      description: allows a player to list and play songs
