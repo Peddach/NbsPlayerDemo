@@ -17,6 +17,10 @@
 			<id>papermc</id>
 			<url>https://papermc.io/repo/repository/maven-public/</url>
 		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -24,6 +28,11 @@
 			<artifactId>paper-api</artifactId>
 			<version>1.18.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.koca2000</groupId>
+			<artifactId>NoteBlockAPI</artifactId>
+			<version>Tag</version>
 		</dependency>
 	</dependencies>
 </project>
