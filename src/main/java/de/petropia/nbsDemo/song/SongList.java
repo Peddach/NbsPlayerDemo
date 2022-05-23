@@ -15,6 +15,7 @@ public class SongList {
 	private final List<File> nbsFiles = new ArrayList<>();
 	private final List<Song> songs = new ArrayList<>();
 	
+	//Checks if directory is present and load all .nbs files
 	public SongList(String path) {
 		directory = new File(path);
 		if(!checkIfDirectoryExist()) {
@@ -26,12 +27,14 @@ public class SongList {
 		loadSongsFromNbs();
 	}
 	
+	//Parse every nbs file to a song object and adds it to a list
 	private void loadSongsFromNbs() {
 		for(File file : nbsFiles) {
 			songs.add(NBSDecoder.parse(file));
 		}
 	}
 	
+	//add every .nbs file to  the list nbsFiles if it ends with .nbs
 	private void loadNbsFiles() {
 		for(File file : directory.listFiles()) {
 			if(!file.getName().endsWith(".nbs")) {
@@ -41,6 +44,7 @@ public class SongList {
 		}
 	}
 	
+	//checks if the where the songs are exists
 	private boolean checkIfDirectoryExist() {
 		if(!directory.exists()) {
 			return false;
@@ -51,11 +55,17 @@ public class SongList {
 		return true;
 	}
 	
+	//create the directiry. Unpridictable!
 	private void createDirectory() {
 		directory.mkdirs();
+		NbsDemo.getInstance().getLogger().info("Erstelle Ordner: " + directory.getAbsolutePath());
 	}
 
 	public List<Song> getSongs() {
 		return songs;
+	}
+	
+	public List<File> getNbsFiles(){
+		return nbsFiles;
 	}
 }
