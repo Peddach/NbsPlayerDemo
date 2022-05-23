@@ -1,8 +1,10 @@
-name: Bingo
+name: NbsDemo
 main: de.petropia.nbsDemo.NbsDemo
 author: Professor_Sam
-version: ${project.version}
+version: 1.0.0
 api-version: 1.18
+depend: 
+   - NoteBlockAPI
 commands:
    Songs:
       description: Manage songs
